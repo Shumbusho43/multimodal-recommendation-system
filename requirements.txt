@@ -1,4 +1,5 @@
 joblib
+librosa==0.11.0
 matplotlib
 numpy
 opencv-python-headless>=4.8,<5
@@ -7,3 +8,4 @@ pillow
 pillow-heif
 scikit-image
 scikit-learn
+soundfile
