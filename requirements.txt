@@ -1,0 +1,9 @@
+joblib
+matplotlib
+numpy
+opencv-python-headless>=4.8,<5
+pandas
+pillow
+pillow-heif
+scikit-image
+scikit-learn
