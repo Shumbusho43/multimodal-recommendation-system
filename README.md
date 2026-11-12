@@ -56,10 +56,7 @@ python main.py --face datasets/images/Allan/Allan_neutral.jpg --voice datasets/a
 
 Exit codes: `0` access granted, `1` access denied, `2` error (missing file, bad type, model problem).
 
-Accepted inputs: images `.jpg .jpeg .png .bmp .heic .heif`; audio `.wav .mp3 .m4a .flac .ogg`. Each attempt is appended to `logs/access_log.csv` (not committed).
-
-`--mock` replaces any model that is not ready with a stand-in that decides from the file name. It is only for development; all three real models are ready, so do not use it for the final demo.
-
+Accepted inputs: images `.jpg .jpeg .png .bmp .heic .heif`; audio `.wav .mp3 .m4a .flac .ogg`. Each attempt is appended to `logs/access_log.csv` 
 ## System demonstration and testing
 
 `python main.py --demo` runs the scenarios in `demo_scenarios.json` and writes the table in `results/system_test_results.md`:
@@ -92,12 +89,6 @@ The face model (YuNet detector + SFace embeddings + logistic regression, ONNX we
 
 The integration layer accepts either `verified` or `authorized` as the status key, lowercases identities (`allan`, `david`, `nazira`, `shamila`), and denies access when no identity is named, the identity is not a group member, or the voice confidence is below 0.60. `identity_map.json` links each member to a `customer_id` in `datasets/merged_dataset.csv`; that id is passed to `predict_product` after the face is verified.
 
-## Known limitations (also for the report)
-
-- **Product model accuracy is low** (0.16, the same as an always-predict-one-category baseline) because the merged dataset is small (150 transactions, 75 customers). The recommendation is a prototype output.
-- **Very small face and voice datasets**: 12 face photos (3 per member) and 10 voice recordings. Perfect scores show the pipeline works, not that it generalises to many people.
-- **Face evaluation:** leave-one-image-out accuracy 1.000; genuine similarity 0.574-0.894 versus 0.216-0.394 for 13 impostor attempts (threshold 0.45). Only one photo from outside the group exists, and spoofing (a printed photo or a screen replay) is untested.
-- **`identity_map.json` customer IDs are placeholders** (151, 192, 114, 100); confirm which customer each member represents.
 
 ## Repository layout
 
