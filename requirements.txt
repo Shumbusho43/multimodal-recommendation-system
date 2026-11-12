@@ -1,3 +1,5 @@
+# scikit-learn MUST be 1.6.1: the saved .pkl models were created with it and fail to load on other versions.
+scikit-learn==1.6.1
 joblib
 librosa==0.11.0
 matplotlib
@@ -6,5 +8,7 @@ opencv-python-headless>=4.8,<5
 pandas
 pillow
 pillow-heif
-scikit-learn
 soundfile
+
+# Tests use only the standard library (unittest): python -m unittest discover tests
+imageio-ffmpeg
