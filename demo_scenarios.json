@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Authorized transaction (Allan: face + voice)",
+    "face": "datasets/images/Allan/Allan_neutral.jpg",
+    "voice": "datasets/audio/Allan_confirm.wav",
+    "expected": "GRANTED"
+  },
+  {
+    "name": "Authorized transaction (Nazira: face + voice, HEIC photo)",
+    "face": "datasets/images/Nazira/Nazira_neutral.HEIC",
+    "voice": "datasets/audio/Nazira_approve.wav",
+    "expected": "GRANTED"
+  },
+  {
+    "name": "Unauthorized attempt: stranger's face photo",
+    "face": "datasets/unauthorized_images/unknown_astronaut.png",
+    "voice": "datasets/audio/Allan_confirm.wav",
+    "expected": "DENIED_FACE"
+  },
+  {
+    "name": "Unauthorized attempt: valid face, unknown voice",
+    "face": "datasets/images/Allan/Allan_neutral.jpg",
+    "voice": "datasets/audio/unknown_confirm.wav",
+    "expected": "DENIED_VOICE"
+  },
+  {
+    "name": "Identity mismatch: Allan's face, David's voice",
+    "face": "datasets/images/Allan/Allan_neutral.jpg",
+    "voice": "datasets/audio/David_approve.wav",
+    "expected": "DENIED_VOICE"
+  }
+]
