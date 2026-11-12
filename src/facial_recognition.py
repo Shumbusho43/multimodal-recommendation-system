@@ -56,8 +56,8 @@ PRETRAINED_URLS = {
 }
 
 # Cosine similarity a probe must reach against the claimed member's enrolled
-# faces. Leave-one-out on our data gives genuine scores >= 0.56 and impostor
-# scores <= 0.36 (SFace's published reference threshold is 0.363), so 0.45
+# faces. Leave-one-out on our data gives genuine scores >= 0.57 and impostor
+# scores <= 0.40 (SFace's published reference threshold is 0.363), so 0.45
 # sits in the gap between the two distributions.
 DEFAULT_SIMILARITY_THRESHOLD = 0.45
 MAX_IMAGE_SIDE = 1024
