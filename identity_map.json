@@ -1,0 +1,8 @@
+{
+  "_note": "Maps each authorized group member (identity label used by the face and voice models) to a customer_id in datasets/merged_dataset.csv. The product model is called with this customer_id after the face is verified.",
+  "_todo": "PLACEHOLDER IDs - confirm with Shamila which customer_id each member should use, then edit the numbers below.",
+  "allan": 151,
+  "david": 192,
+  "nazira": 114,
+  "shamila": 100
+}
